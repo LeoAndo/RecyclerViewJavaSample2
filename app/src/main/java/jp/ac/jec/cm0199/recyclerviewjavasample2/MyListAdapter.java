@@ -49,7 +49,7 @@ final class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.VH> {
 
     @Override
     public int getItemCount() {
-        return this.items.size();
+        return items.size();
     }
 
     /**
