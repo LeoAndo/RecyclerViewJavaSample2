@@ -59,7 +59,7 @@ final class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.VH> {
      */
     void updateItem(final int position) {
         items.set(position, new Item(position, "ロボット" + SystemClock.elapsedRealtime() + "号")); // テストデータ
-        notifyItemChanged(position);// 変更がある箇所だけ差分更新する.
+        notifyItemChanged(position);// 変更のあった特定の位置のみを効率的に更新する
         // notifyDataSetChanged(); // これだとリスト全体の更新が走る.
     }
 
@@ -71,7 +71,7 @@ final class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.VH> {
     void insertItem(final int position) {
         var newItem = new Item(position, "ロボット" + SystemClock.elapsedRealtime() + "号"); // テストデータ
         items.add(position, newItem);
-        notifyItemInserted(position);// 追加した箇所だけ差分更新する.
+        notifyItemInserted(position);// 変更のあった特定の位置のみを効率的に更新する
     }
 
     /**
@@ -81,7 +81,7 @@ final class MyListAdapter extends RecyclerView.Adapter<MyListAdapter.VH> {
      */
     void removeItem(final int position) {
         items.remove(position);
-        notifyItemRemoved(position); // 削除した箇所だけ差分更新する.
+        notifyItemRemoved(position); // 変更のあった特定の位置のみを効率的に更新する
     }
 
     class VH extends RecyclerView.ViewHolder {
