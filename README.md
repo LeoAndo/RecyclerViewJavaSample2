@@ -1,6 +1,5 @@
 # overview
-jp) DiffUtil.ItemCallbackを使わないパターン
-en) A pattern that does not use DiffUtil.ItemCallback
+A pattern that does not use DiffUtil.ItemCallback
 
 # development environment
 ```
